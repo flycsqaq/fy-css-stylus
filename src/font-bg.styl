@@ -1,0 +1,22 @@
+[font-bg]
+  display inline-block
+
+[font-bg=underline]
+  background-image linear-gradient(gray 1px, transparent 0)
+  background-size auto 1.5em
+  background-position 0 1.15em
+
+[font-bg=parallelogram]
+  position relative
+  padding .3em
+  z-index 1
+  &::before
+    content ''
+    background #58a
+    position absolute
+    top 0
+    bottom 0
+    left 0
+    right 0
+    z-index -1
+    transform skewX(-45deg)

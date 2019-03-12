@@ -1,0 +1,25 @@
+setlayout()
+  for propC in $layoutC
+    {propC[0]}
+      background-color propC[1]
+  for propH in $layoutH
+    {propH[0]}
+      min-height propH[1]
+  h = $layoutH[0][1] + $layoutH[1][1]
+  main
+    min-height "calc(100vh - %s)" % h
+    padding 10px
+    box-sizing border-box
+    h1
+      margin 0
+html
+  font-size 100%
+  line-height $line-height
+  setlayout()
+for prop in $media
+  @media (max-width: unit(prop[0], 'px'))
+    w = unit(prop[1], 'px')
+    p = "calc(50% - %s / 2)" % w
+    .container, footer
+      width w
+      padding 0 p

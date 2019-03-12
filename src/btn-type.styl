@@ -1,0 +1,30 @@
+[fy-button]
+  padding .2em .5em
+  margin 10px
+  color #ffffff
+  line-height $line-height
+  border 2px solid rgba(255, 255, 255, .5)
+  cursor pointer
+  border-radius 5px
+  position relative
+  &:not([type])
+    background #5588aa
+  &::after
+    content: ''
+    position absolute
+    top -5px
+    bottom -5px
+    left -5px
+    right -5px
+    z-index 2
+  &:hover
+    position relative
+    &::after
+      background rgba(255,255,255,.5)
+  &:active
+    position relative
+    &::after
+      background rgba(255,255,255,.3)
+
+[type=warn]
+  background deeppink
