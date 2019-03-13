@@ -5,6 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 // var stylus_plugin = require('stylus_plugin')
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const extractSTYLUS = new ExtractTextPlugin('stylesheet/[name]-one.css')
+const extractCSS = new ExtractTextPlugin('stylesheet/[name]-two.css')
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -15,6 +16,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     extractSTYLUS,
+    extractCSS,
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
@@ -29,23 +31,12 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
+        use: extractCSS.extract([ 'css-loader', 'postcss-loader' ])
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          'file-loader'
-        ]
+        test: /\.styl$/i,
+        use: extractSTYLUS.extract([ 'css-loader', 'stylus-loader' ])
       },
-      {
-        test: /\.styl$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'stylus-loader']
-        })
         // use: extractSTYLUS.extract(['css-loader', 'stylus-loader']) 
         // [
         //   'style-loader',
@@ -57,7 +48,6 @@ module.exports = {
         //     // },
         //   },
         // ],
-      }
     ]
   }
 }
