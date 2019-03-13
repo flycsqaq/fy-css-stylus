@@ -1,3 +1,62 @@
-h1 {
-  color: blue !important
+main {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important
+}
+section {
+  margin-bottom: 20px
+}
+.projection {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 1.2rem;
+  color: white
+}
+.projection>div {
+  width: 150px;
+  height: 150px;
+  background: #fb3;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.bg-pic {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.bg-pic>div {
+  width: 130px;
+  height: 130px;
+  background: rgba(255,255,255,.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px
+}
+.bg-pic>div::before {
+  z-index: -1
+}
+
+.textbox {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 1.2rem;
+}
+
+.textbox>div {
+  width: 300px;
+  margin: 10px 0
+}
+.image-text>figure>img {
+  width: 200px;
+  height: 150px;
+  background: radial-gradient(gray, deeppink)
+}
+.pie {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }

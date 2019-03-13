@@ -1,3 +1,4 @@
+// 背景色与高度
 setlayout()
   for propC in $layoutC
     {propC[0]}
@@ -9,17 +10,27 @@ setlayout()
   main
     min-height "calc(100vh - %s)" % h
     padding 10px
-    box-sizing border-box
+    margin 0
     h1
       margin 0
+
+//字体、文本行高
 html
   font-size 100%
   line-height $line-height
   setlayout()
+
+// 媒体查询
 for prop in $media
   @media (max-width: unit(prop[0], 'px'))
     w = unit(prop[1], 'px')
     p = "calc(50% - %s / 2)" % w
     .container, footer
-      width w
+      box-sizing border-box
+      width 100%
       padding 0 p
+
+@media (max-width: 500px)
+  .container, footer
+    width 100%
+    padding 0

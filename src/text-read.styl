@@ -1,0 +1,16 @@
+[grass]
+  padding 30px
+  el-before-enlarge(10px)
+  &:not([color])
+    background $baseC
+  &::before
+    filter blur(20px)
+    background rgba(255,255,255,.5)
+
+[bevel]
+  padding 30px
+  &:not([color])
+    background $baseC
+    background-image linear-gradient(-45deg, white 25px, transparent 0)
+  &:[color]
+    background-image linear-gradient(-45deg, white 25px, transparent 0)

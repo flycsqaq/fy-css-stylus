@@ -1,0 +1,49 @@
+[smallpie]
+  width 200px
+  height 200px
+  border-radius 50%
+  background $baseC
+  background-image linear-gradient(90deg, transparent 50%, #fb3 0)
+  el-before-enlarge(0)
+  &::before
+    margin-left 50%
+    border-radius 0 100% 100% 0 / 50%
+    background $baseC
+    transform-origin left
+    transform rotate(20deg)
+
+[largepie]
+  width 200px
+  height 200px
+  border-radius 50%
+  background $baseC
+  background-image linear-gradient(90deg, transparent 50%, #fb3 0)
+  el-before-enlarge(0)
+  &::before
+    margin-left 50%
+    border-radius 0 100% 100% 0 / 50%
+    background #fb3
+    transform-origin left
+    transform rotate(20deg)
+
+@keyframes pie-color
+  50%
+    background #ffbb33
+
+@keyframes pie-go
+  to
+    transform rotate(180deg)
+
+[allpie]
+  width 200px
+  height 200px
+  border-radius 50%
+  background $baseC
+  background-image linear-gradient(90deg, transparent 50%, #fb3 0)
+  el-before-enlarge(0)
+  &::before
+    margin-left 50%
+    border-radius 0 100% 100% 0 / 50%
+    background $baseC
+    transform-origin left
+    animation 10s pie-color step-end infinite, 5s pie-go linear infinite

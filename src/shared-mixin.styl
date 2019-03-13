@@ -1,0 +1,22 @@
+el-before-enlarge(n)
+  position relative
+  z-index 1
+  &::before
+    pw = unit(n, "px")
+    content ''
+    position absolute
+    top pw
+    bottom pw
+    left pw
+    right pw
+
+create-projection()
+  left = '-5px 0 5px -5px black'
+  right = '5px 0 5px -5px black'
+  top = '0 -5px 5px -5px black'
+  bottom = '0 5px 5px -5px black'
+  projection-box = ()
+  for prop in arguments
+    push(projection-box, prop)
+  box-shadow unquote(join(',', projection-box))
+  

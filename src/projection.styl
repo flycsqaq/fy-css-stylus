@@ -1,0 +1,13 @@
+locations = left right bottom top
+for location in locations
+  [projection={location}]
+    create-projection(location)
+
+[projection='left right']
+  create-projection(left right)
+
+[projection='right bottom']
+  create-projection(right bottom)
+
+[projection='all']
+  create-projection(left top right bottom)

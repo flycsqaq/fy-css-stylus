@@ -1,0 +1,50 @@
+[parallelogram]
+  el-before-enlarge(0)
+  &:not([color])::before
+    background $baseC
+  &::before
+    transform skew(-10deg)
+
+[rhombus]
+  el-before-enlarge(0)
+  &:not([color])::before
+    background $baseC
+  &::before
+    clip-path polygon(0 50%, 50% 0, 100% 50%, 50% 100%)
+    transition clip-path 2s ease
+  &:hover
+    &::before
+      clip-path polygon(0 0, 100% 0, 100% 100%, 0 100%)
+      transition clip-path 2s ease
+
+[circle]
+  el-before-enlarge(0)
+  &:not([color])::before
+    border-radius 50%
+    background $baseC
+
+[gridding]
+  el-before-enlarge(0)
+  &:not([color])
+    background $baseC
+  &::before
+    background linear-gradient(gray 1px, transparent 0), linear-gradient(90deg, gray 1px, transparent 0)
+    background-size auto 20px, 20px auto
+
+[wavepoint]
+  el-before-enlarge(0)
+  &:not([color])
+    background $baseC
+  &::before
+    background radial-gradient(gray 30%, transparent 0), radial-gradient(gray 30%, transparent 0)
+    background-size 2em 2em, 2em 2em
+    background-position 0 0, 1em 1em
+
+[chessboard]
+  el-before-enlarge(0)
+  &:not([color])
+    background $baseC
+  &::before
+    background linear-gradient(45deg, rgba(255,255,255,.5) 25%, transparent 0),linear-gradient(45deg, rgba(255,255,255,.5) 25%, transparent 0), linear-gradient(45deg, transparent 75%,  rgba(255,255,255,.5) 0), linear-gradient(45deg, transparent 75%,  rgba(255,255,255,.5) 0)
+    background-size 30px 30px
+    background-position 0 0, 15px 15px
