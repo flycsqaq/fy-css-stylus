@@ -4,8 +4,8 @@ const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 // var stylus_plugin = require('stylus_plugin')
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
-const extractSTYLUS = new ExtractTextPlugin('stylesheet/[name]-one.css')
-const extractCSS = new ExtractTextPlugin('stylesheet/[name]-two.css')
+const extractSTYLUS = new ExtractTextPlugin('stylesheets/fy-style.css')
+const extractCSS = new ExtractTextPlugin('stylesheets/person-style.css')
 module.exports = {
   entry: './src/index.js',
   output: {
