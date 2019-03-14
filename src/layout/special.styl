@@ -1,0 +1,24 @@
+w = 100px
+h = 100px
+[double-column]
+  display flex
+  &>:first-child
+    flex 100px
+    min-height h
+    background $baseC
+  &>:last-child
+    flex "calc(100% - %s)" % w
+    min-height h
+    background $contrastC
+
+[three-column]
+  display flex
+  &>:first-child, &>:last-child
+    flex w
+    min-height h
+    background $baseC
+  &>:nth-child(2)
+    flex "calc(100% - 2*%s)" % w
+    min-height h
+    background $contrastC 
+
