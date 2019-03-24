@@ -30,6 +30,7 @@ html main {
   min-height: calc(100vh - 8em);
   padding: 10px;
   margin: 0;
+  box-sizing: border-box;
 }
 html main h1 {
   margin: 0;
